@@ -1,0 +1,29 @@
+跟project1到底差在哪?
+1.以"執行"指令來說，通通一樣，只是access(store/load) memory時 變成複雜的存取方式
+2.以"讀取"指令(讀iimage)來說，也要用複雜的讀取方式(跟第一次完全不同)
+
+
+以D為例
+1. 一樣讀dimage進來，跟Project1都一樣，project1的dimgae[256]即project3的disk，各筆data在dimage[256]裡的位址(address)即在project3中指的virtual address。也就是說，如果指令跟妳說要load $3 5($2)之類的，那$2+5就是我們要找的資料的virtual address
+
+2.記憶體層級 : cache -> memory -> disk
+那 physical address 是? 理論上妳會開陣列各給cache跟memory，data在memory裡的位子就是physical address 那 physical address怎麼決定? 別忘了一開始cache跟memory都是空的。妳要讀的第一筆資料一定miss miss miss最後去disk找(disk的運作法就跟project1一樣)，然後妳就要把這筆資料存到memory跟cache的某一格，於是那一格的位子就是這個資料的physical address
+
+
+3.讀資料的步驟
+拿到virtual address 
+-> 去 TLB查表(全部看一遍) 
+	-> (找到了)拿到physical address 
+		-> 去cache的對應位址看(1.valid? 2. tag對嗎) 
+			-> (找到了) 拿去用 -> end.
+　　		　　　	-> (沒找到) 去memory找 -> 回cache從頭找一格空的存這筆資料，沒空格就用LRU replace一格(看MRU)
+	-> (沒找到)去PTE查表 (應該是全部看一遍)
+		-> (找到了) 把這組virtual對應physical拿去更新TLB，一樣用LRU，然後跳回查TLB那邊再做一次
+		-> (沒找到) page fault ! 去disk找，virtual address .就.是 disk裡的位址，要記得把這筆資料拿去更新memory跟cache
+		
+
+
+
+備註 : configure怎麼用?
+int main(int argc, char* argv[])
+執行的時候就會去吃後面的參數(但我不知道C::B可不可以 可能要用工作站或cmd跑) argc代表總共輸入了幾個參數 argv就是各個參數(照順序)

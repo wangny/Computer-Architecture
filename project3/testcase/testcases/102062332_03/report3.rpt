@@ -1,0 +1,24 @@
+ICache :
+# hits: 332
+# misses: 2679
+
+DCache :
+# hits: 1324
+# misses: 993
+
+ITLB :
+# hits: 2815
+# misses: 196
+
+DTLB :
+# hits: 2310
+# misses: 7
+
+IPageTable :
+# hits: 190
+# misses: 6
+
+DPageTable :
+# hits: 0
+# misses: 7
+

@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1462184008 source:d:\documents\computer architecture\project2\pipeline\decode.cpp
+	<math.h>
+	"Decode.h"
+
+1462093367 d:\documents\computer architecture\project2\pipeline\decode.h
+	<iostream>
+
+1462980842 source:d:\documents\computer architecture\project2\pipeline\main.cpp
+	<iostream>
+	<stdio.h>
+	<string>
+	"readfile.h"
+	"Decode.h"
+	"Error.h"
+
+1458310811 d:\documents\computer architecture\project2\pipeline\readfile.h
+
+1459521405 source:d:\documents\computer architecture\project2\pipeline\readfile.cpp
+	<fstream>
+	"readfile.h"
+
+1462120234 d:\documents\computer architecture\project2\pipeline\error.h
+

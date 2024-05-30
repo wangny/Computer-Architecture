@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1458998226 source:d:\documents\computer architecture\project1\testcase_generator\main.cpp
+	<iostream>
+	<stdio.h>
+	<random>
+	<chrono>
+

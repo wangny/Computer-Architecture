@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1465656403 source:d:\documents\computer architecture\project3\cmp\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	<cmath>
+	"readfile.h"
+	"Decode.h"
+	"Cache.h"
+	"TLB.h"
+
+1458310811 d:\documents\computer architecture\project3\cmp\readfile.h
+
+1459591045 d:\documents\computer architecture\project3\cmp\decode.h
+
+1459590015 source:d:\documents\computer architecture\project3\cmp\decode.cpp
+	<math.h>
+	"Decode.h"
+
+1464890348 source:d:\documents\computer architecture\project3\cmp\readfile.cpp
+	<fstream>
+	"readfile.h"
+
+1464972210 source:d:\documents\computer architecture\project3\cmp\cache.cpp
+	<iostream>
+	"Cache.h"
+
+1464972246 d:\documents\computer architecture\project3\cmp\cache.h
+	<vector>
+
+1464951249 source:d:\documents\computer architecture\project3\cmp\tlb.cpp
+	"TLB.h"
+
+1464690253 d:\documents\computer architecture\project3\cmp\tlb.h
+	<vector>
+

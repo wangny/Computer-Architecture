@@ -1,0 +1,28 @@
+0x00000270
+      . andi $8 $0 0
+      . sw   $31, 0($29)
+      . lw   $4, 0($0)
+      . jal  sumToN
+      . sw   $2, 4($0)
+      . lw   $31, 0($29)
+      . addi $29, $29, 4
+      . lw   $3, 4($0)
+      . halt
+      . halt
+      . halt
+      . halt
+      . halt
+sumToN  slti $8, $4, 2
+      . beq  $8, $0, recur
+      . or   $2, $4, $0
+      . jr   $31
+ recur  addi $29, $29, -8
+      . sw   $31, 4($29)
+      . sw   $4, 0($29)
+      . addi $4, $4, -1
+      . jal  sumToN
+      . lw   $4, 0($29)
+      . lw   $31, 4($29)
+      . addi $29, $29, 8
+      . add  $2, $2, $4
+      . jr   $31
